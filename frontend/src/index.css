@@ -1,0 +1,117 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #111;
+  color: hwb(0 100% 0%);
+}
+
+.logo img {
+  width: 120px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #222;
+  color: #440505;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.create-movie-section {
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+}
+
+.create-movie-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-movie-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.create-movie-form input {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+}
+
+.create-movie-form button {
+  padding: 10px 20px;
+  background-color: #555;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.create-movie-form button:hover {
+  background-color: #777;
+}
+
+.movies-section {
+  padding: 20px;
+  background-color: #111;
+  color: #fff;
+}
+
+.movies-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #444;
+}
+
+.movie-card h3 {
+  margin: 10px 0 5px;
+}
+
+.movie-card p {
+  color: #aaa;
+  font-size: 14px;
+}
