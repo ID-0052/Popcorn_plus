@@ -15,6 +15,11 @@ mongoose
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
+// Root Route
+app.get("/", (req, res) => {
+  res.send("Welcome to the Movie API!");
+});
+
 // Add Movies
 app.post("/api/movies", async (req, res) => {
   try {
