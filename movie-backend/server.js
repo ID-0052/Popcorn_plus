@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -10,11 +11,9 @@ app.use(cors());
 
 // Connect to MongoDB
 mongoose
-  .connect(
-    "mongodb+srv://ID-0052:Farazavenueb3@id-0052.xu00n.mongodb.net/movies?retryWrites=true&w=majority&appName=ID-0052"
-  )
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((error) => console.error("Could not connect to MongoDB:", error));
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 // Add Movies
 app.post("/api/movies", async (req, res) => {
@@ -36,6 +35,7 @@ app.post("/api/movies", async (req, res) => {
   }
 });
 
+// Fetch All Movies
 app.get("/api/movies", async (req, res) => {
   try {
     const movies = await Movie.find();
@@ -45,7 +45,7 @@ app.get("/api/movies", async (req, res) => {
   }
 });
 
-// Get Movie
+// Fetch Single Movie by ID
 app.get("/api/movies/:id", async (req, res) => {
   try {
     const movieId = req.params.id;
@@ -63,7 +63,7 @@ app.get("/api/movies/:id", async (req, res) => {
   }
 });
 
-// Delete Movie
+// Delete Movie by ID
 app.delete("/api/movies/:id", async (req, res) => {
   try {
     await Movie.findByIdAndDelete(req.params.id);
